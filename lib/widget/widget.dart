@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:football_demo/routes/routes.dart';
 
 class DrawerMenu extends StatelessWidget {
 
@@ -9,8 +10,8 @@ class DrawerMenu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           _buildDrawerHeader(),
-          _buildDrawerItem(icon: Icons.home, text:'Home', onTap:() => null),
-          _buildDrawerItem(icon: Icons.format_list_numbered, text:'Competitions', onTap:() => null),
+          _buildDrawerItem(icon: Icons.home, text:'Home', onTap:() => Navigator.pushReplacementNamed(context, Routes.home)),
+          _buildDrawerItem(icon: Icons.format_list_numbered, text:'Competitions', onTap:() => Navigator.pushReplacementNamed(context, Routes.competitions)),
           _buildDrawerItem(icon: Icons.group, text:'Teams', onTap:() => null),
         ],
       ),
@@ -24,7 +25,7 @@ class DrawerMenu extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage(''),
+          image: AssetImage('images/drawer_bg.jpg'),
         )
       ),
       child: Stack(
